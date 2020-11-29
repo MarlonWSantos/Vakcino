@@ -11,7 +11,7 @@
             android:theme="@style/AppTheme">
 
         <activity
-                android:name=".Tela_inicial"
+                android:name=".TelaInicial"
                 android:screenOrientation="portrait"
                 android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
@@ -26,7 +26,7 @@
                 android:label="@string/title_activity_tela_login">
         </activity>
 
-        <activity android:name=".Tela_cadastro">
+        <activity android:name=".TelaCadastro">
         </activity>
 
         <activity android:name=".MainActivity">

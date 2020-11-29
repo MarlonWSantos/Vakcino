@@ -5,8 +5,19 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Entrar</string>
     <string name="action_sign_in_short">Cadastro</string>
-    <string name="welcome">Cadastro</string>
+    <string name="welcome">Welcome!</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="salvar">Salvar</string>
+    <string name="adicionar_vacina">Adicionar vacina</string>
+    <string name="masculino">Masculino</string>
+    <string name="feminino">Feminino</string>
+    <string name="nome">Nome</string>
+    <string name="idade">Idade</string>
+    <string name="sexo">Sexo</string>
+    <string name="digite_idade">Digite sua idade</string>
+    <string name="digite_nome">Digite seu nome</string>
+    
 </resources>

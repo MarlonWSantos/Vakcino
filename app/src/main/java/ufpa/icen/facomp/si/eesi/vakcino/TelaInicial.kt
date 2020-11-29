@@ -9,7 +9,7 @@ import ufpa.icen.facomp.si.eesi.vakcino.ui.login.Tela_login
 
 
 @Suppress("DEPRECATION")
-class Tela_inicial : AppCompatActivity() {
+class TelaInicial : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicial)

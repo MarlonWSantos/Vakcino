@@ -5,6 +5,154 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Tela_cadastro">
+        tools:context=".TelaCadastro">
+    <Button
+            android:text="@string/cancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancelar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="@id/salvar"
+            app:layout_constraintTop_toBottomOf="@id/adicionar_vacina"
+    />
+    <Button
+            android:text="@string/salvar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/salvar"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/cancelar"
+            app:layout_constraintTop_toBottomOf="@id/adicionar_vacina"
+            />
+    <Button
+            android:text="@string/adicionar_vacina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/adicionar_vacina"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cancelar"
+            app:layout_constraintTop_toBottomOf="@id/spinner2"
+
+    />
+    <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/adicionar_vacina"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup"
+
+
+    />
+    <ImageView
+            android:layout_width="115dp"
+            android:layout_height="152dp"
+            tools:src="@mipmap/logo_ufpa_menor"
+            android:id="@+id/imageView"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/nome"
+            tools:ignore="ContentDescription"/>
+
+    <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/radioGroup"
+            app:layout_constraintBottom_toTopOf="@id/spinner2"
+            app:layout_constraintTop_toBottomOf="@id/inputIdade"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+
+        <TextView
+                android:text="@string/sexo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/sexo"
+                android:textSize="24sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_weight="1"/>
+        <RadioButton
+                android:text="@string/masculino"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/Masculino"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/Feminino"
+                android:layout_weight="1"/>
+        <RadioButton
+                android:text="@string/feminino"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/Feminino"
+                app:layout_constraintRight_toLeftOf="@id/Masculino"
+                app:layout_constraintLeft_toRightOf="@id/sexo"
+                android:layout_weight="1"/>
+    </RadioGroup>
+
+
+
+
+    <TextView
+            android:text="@string/nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nome"
+            android:textSize="24sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintBottom_toTopOf="@id/inputNome"
+            />
+    <TextView
+            android:text="@string/idade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/idade"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputNome"
+            app:layout_constraintBottom_toTopOf="@id/inputIdade"
+            />
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/inputIdade"
+            android:hint="@string/digite_idade"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idade"
+            app:layout_constraintBottom_toTopOf="@id/radioGroup"
+
+    />
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/digite_nome"
+                app:layout_constraintTop_toBottomOf="@id/nome"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/idade"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

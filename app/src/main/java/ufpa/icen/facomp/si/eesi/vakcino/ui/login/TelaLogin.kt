@@ -17,7 +17,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import ufpa.icen.facomp.si.eesi.vakcino.MainActivity
 import ufpa.icen.facomp.si.eesi.vakcino.R
-import ufpa.icen.facomp.si.eesi.vakcino.Tela_cadastro
+import ufpa.icen.facomp.si.eesi.vakcino.TelaCadastro
 
 class Tela_login : AppCompatActivity() {
 
@@ -35,7 +35,7 @@ class Tela_login : AppCompatActivity() {
         val loading = findViewById<ProgressBar>(R.id.loading)
 
         cadastro.setOnClickListener {
-                val i = Intent(this,Tela_cadastro::class.java)
+                val i = Intent(this,TelaCadastro::class.java)
                 startActivity(i)
                 finish()
         }
