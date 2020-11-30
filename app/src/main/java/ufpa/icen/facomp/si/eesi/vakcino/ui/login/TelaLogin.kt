@@ -19,13 +19,14 @@ import ufpa.icen.facomp.si.eesi.vakcino.MainActivity
 import ufpa.icen.facomp.si.eesi.vakcino.R
 import ufpa.icen.facomp.si.eesi.vakcino.TelaCadastro
 
-class Tela_login : AppCompatActivity() {
+class TelaLogin : AppCompatActivity() {
 
     private lateinit var loginViewModel: LoginViewModel
-
+    companion object {
+        var primeiroCadastro=false
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_tela_login)
 
         val username = findViewById<EditText>(R.id.username)
@@ -34,18 +35,18 @@ class Tela_login : AppCompatActivity() {
         val cadastro = findViewById<Button>(R.id.cadastro)
         val loading = findViewById<ProgressBar>(R.id.loading)
 
+        primeiroCadastro=false
         cadastro.setOnClickListener {
+            primeiroCadastro=true
                 val i = Intent(this,TelaCadastro::class.java)
                 startActivity(i)
                 finish()
         }
 
-
-
         loginViewModel = ViewModelProviders.of(this, LoginViewModelFactory())
             .get(LoginViewModel::class.java)
 
-        loginViewModel.loginFormState.observe(this@Tela_login, Observer {
+        loginViewModel.loginFormState.observe(this@TelaLogin, Observer {
             val loginState = it ?: return@Observer
 
             // disable login button unless both username / password is valid
@@ -59,7 +60,7 @@ class Tela_login : AppCompatActivity() {
             }
         })
 
-        loginViewModel.loginResult.observe(this@Tela_login, Observer {
+        loginViewModel.loginResult.observe(this@TelaLogin, Observer {
             val loginResult = it ?: return@Observer
 
             loading.visibility = View.GONE
