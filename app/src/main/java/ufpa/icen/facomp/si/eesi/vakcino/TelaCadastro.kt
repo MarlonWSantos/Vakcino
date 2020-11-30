@@ -25,7 +25,7 @@ class TelaCadastro : AppCompatActivity() {
         cancelar.setOnClickListener {
             var primeiroCadastro = TelaLogin.primeiroCadastro
             var i = Intent()
-            if(primeiroCadastro){                
+            if(primeiroCadastro){
                 i = Intent(this,TelaLogin::class.java)
             }else{
                 i = Intent(this,MainActivity::class.java)
@@ -33,6 +33,20 @@ class TelaCadastro : AppCompatActivity() {
             startActivity(i)
             finish()
         }
+
+        salvar.setOnClickListener{
+            val i = Intent(this,MainActivity::class.java)
+            startActivity(i)
+            finish()
+        }
+
+        adicionarVacina.setOnClickListener{
+            val i = Intent(this,TelaAdicionarVacina::class.java)
+            startActivity(i)
+            finish()
+        }
+
+
 
     }
 }
