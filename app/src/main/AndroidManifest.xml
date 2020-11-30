@@ -9,7 +9,12 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-
+        <activity android:name=".TelaInfoUsuario">
+        </activity>
+        <activity android:name=".TelaCriarLembrete">
+        </activity>
+        <activity android:name=".TelaAdicionarVacina">
+        </activity>
         <activity
                 android:name=".TelaInicial"
                 android:screenOrientation="portrait"
@@ -20,15 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity
                 android:name=".ui.login.TelaLogin"
                 android:label="@string/title_activity_tela_login">
         </activity>
-
         <activity android:name=".TelaCadastro">
         </activity>
-
         <activity android:name=".MainActivity">
         </activity>
     </application>
