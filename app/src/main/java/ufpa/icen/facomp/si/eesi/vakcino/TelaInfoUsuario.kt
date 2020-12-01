@@ -25,6 +25,7 @@ class TelaInfoUsuario : AppCompatActivity() {
 
         adicionarVacina.setOnClickListener{
             val i = Intent(this,TelaAdicionarVacina::class.java)
+
             startActivity(i)
             finish()
         }

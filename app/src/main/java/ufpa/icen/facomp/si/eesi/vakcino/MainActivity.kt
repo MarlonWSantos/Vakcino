@@ -3,10 +3,8 @@ package ufpa.icen.facomp.si.eesi.vakcino
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ListView
-import android.widget.TextView
+import android.widget.*
+import ufpa.icen.facomp.si.eesi.vakcino.BD
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +20,15 @@ class MainActivity : AppCompatActivity() {
         val adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,lista)
 
         listaUsuarios.setAdapter(adapter)
+
+
+        listaUsuarios.setOnItemClickListener{ parent, view, position, id ->
+            Toast.makeText(this, "You Clicked:"+" "+position, Toast.LENGTH_SHORT).show()
+            val bd = BD()
+            bd.setInfoUsuario("Marlon","25 anos","Masculino","Filho")
+            var lista:ArrayList<String> = bd.getInfoUsuario(position)
+            Toast.makeText(this, lista.get(0), Toast.LENGTH_SHORT).show()
+        }
 
         adicionarUsuario.setOnClickListener {
             val i = Intent(this,TelaCadastro::class.java)
