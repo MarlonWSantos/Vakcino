@@ -34,8 +34,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         listaUsuarios.setOnItemClickListener{ parent, view, position, id ->
-            var lista:ArrayList<String> = bd.getInfoUsuario(position)
-            Toast.makeText(this, lista.toString(), Toast.LENGTH_SHORT).show()
             val i = Intent(this,TelaInfoUsuario::class.java)
             i.putExtra("Posicao do item da lista",position)
             startActivity(i)

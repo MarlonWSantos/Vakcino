@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
+import android.widget.TextView
 
 class TelaInfoUsuario : AppCompatActivity() {
     companion object{
@@ -19,7 +20,7 @@ class TelaInfoUsuario : AppCompatActivity() {
         val intent:Intent = getIntent()
         index = intent.getSerializableExtra("Posicao do item da lista") as Int
 
-        val infoUsuario = findViewById<ListView>(R.id.infoUsuario)
+        val infoUsuario = findViewById<TextView>(R.id.infoUsuario)
         val voltar = findViewById<Button>(R.id.voltar)
         val adicionarVacina = findViewById<Button>(R.id.adicionar_vacina)
         val listaVacinas = findViewById<ListView>(R.id.listaVacinas)
@@ -38,14 +39,14 @@ class TelaInfoUsuario : AppCompatActivity() {
 
         var vacinas = arrayOf("Hepatite B","Pneumonia","Febre Amarela","HPV","Herpes-zóster","Gripe",
             "Tétano","Difteria","Coqueluche","Sarampo","Caxumba","Rubéola","Dengue")
-        //var dadosUsuario = arrayOf("Nome: User 1","Idade: 25 anos","Sexo: Masculino","Parentesco: Pai")
+
         val bd = BD()
         var info:ArrayList<String> = bd.getInfoUsuario(index)
-        var dadosUsuario = arrayOf("Nome: "+info.get(0),"Idade: "+info.get(1),"Sexo: "+info.get(2),"Parentesco: "+info.get(3))
+        var dadosUsuario:String = "Nome: "+info.get(0)+"\nIdade: "+info.get(1)+"\nSexo: "+info.get(2)+"\nParentesco: "+info.get(3)
 
-        val adapterInfoUser = ArrayAdapter(this,android.R.layout.simple_list_item_1,dadosUsuario)
+        //val adapterInfoUser = ArrayAdapter(this,android.R.layout.simple_list_item_1,dadosUsuario)
         val adapterVacinas = ArrayAdapter(this,android.R.layout.simple_list_item_1,vacinas)
-        infoUsuario.setAdapter(adapterInfoUser)
+        infoUsuario.setText(dadosUsuario)
         listaVacinas.setAdapter(adapterVacinas)
 
 

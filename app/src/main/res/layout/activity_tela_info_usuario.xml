@@ -41,22 +41,25 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toTopOf="@id/adicionar_vacina"
-            app:layout_constraintHeight_percent="0.30"
+            app:layout_constraintHeight_percent="0.38"
 
     />
 
 
-    <ListView
+
+
+    <TextView
             android:id="@+id/infoUsuario"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/imageView"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toTopOf="@id/listaVacinas"
-            app:layout_constraintHeight_percent="0.30"
-            android:clickable="false"
-    />
+            app:layout_constraintHeight_percent="0.20"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
 
     <ImageView
             android:layout_width="0dp"
