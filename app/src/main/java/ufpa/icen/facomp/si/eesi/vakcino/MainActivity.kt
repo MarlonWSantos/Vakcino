@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         val adicionarUsuario = findViewById<Button>(R.id.adicionar_usuario)
         val listaUsuarios = findViewById<ListView>(R.id.lista)
+        val voltar = findViewById<Button<>(R.id.voltar)
 
         TelaLogin.primeiroCadastro=false
 
@@ -42,6 +43,12 @@ class MainActivity : AppCompatActivity() {
 
         adicionarUsuario.setOnClickListener {
             val i = Intent(this,TelaCadastro::class.java)
+            startActivity(i)
+            finish()
+        }
+
+        voltar.setOnClickListener{
+            val i = Intent(this, TelaLogin::class.java)
             startActivity(i)
             finish()
         }
