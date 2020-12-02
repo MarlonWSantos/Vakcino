@@ -3,9 +3,8 @@ package ufpa.icen.facomp.si.eesi.vakcino
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
+import android.widget.*
+import com.google.android.material.textfield.TextInputEditText
 import ufpa.icen.facomp.si.eesi.vakcino.ui.login.TelaLogin
 
 class TelaCadastro : AppCompatActivity() {
@@ -17,6 +16,10 @@ class TelaCadastro : AppCompatActivity() {
         val salvar = findViewById<Button>(R.id.salvar)
         val adicionarVacina = findViewById<Button>(R.id.adicionar_vacina)
         val comboParentesco = findViewById<Spinner>(R.id.comboParentesco)
+        val inputNome = findViewById<TextInputEditText>(R.id.inputNome)
+        val inputIdade = findViewById<TextInputEditText>(R.id.inputIdade)
+        val sexoRadioGroup = findViewById<RadioGroup>(R.id.radioGroup)
+
 
         var lista = arrayOf("Pai","Mãe","Filho(a)","Irmã(o)","Tio(a)","Avô(ó)","Neto(a)","Sobrinho(a)")
         val adapter = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,lista)
@@ -35,13 +38,36 @@ class TelaCadastro : AppCompatActivity() {
         }
 
         salvar.setOnClickListener{
-            val i = Intent(this,MainActivity::class.java)
-            startActivity(i)
-            finish()
+
+            var nome:String = inputNome.text.toString()
+            var idade:String = inputIdade.text.toString()
+            var id: Int = sexoRadioGroup.checkedRadioButtonId
+            var sexo:String
+
+            if(id != -1) {
+                val radio:RadioButton = findViewById(id)
+                sexo=radio.text.toString()
+            }else{
+                sexo=""
+            }
+
+            var parentesco:String = comboParentesco.getSelectedItem().toString()
+
+            if(!(nome == " " || idade == " " || sexo == " " || parentesco == " ")){
+                val bd = BD()
+                bd.setInfoUsuario(nome, idade, sexo, parentesco)
+
+                val i = Intent(this, MainActivity::class.java)
+                startActivity(i)
+                finish()
+            }else{
+                Toast.makeText(this, "Digite em todos os campos", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         adicionarVacina.setOnClickListener{
-            val i = Intent(this,TelaAdicionarVacina::class.java)
+            var i = Intent(this,TelaAdicionarVacina::class.java)
             startActivity(i)
             finish()
         }

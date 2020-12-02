@@ -14,6 +14,10 @@ class BD {
         dados.add(arrayListOf(nome,idade,sexo,parentesco))
     }
 
+    fun getTamanhoDados():Int{
+        return dados.size
+    }
+
 
 
 

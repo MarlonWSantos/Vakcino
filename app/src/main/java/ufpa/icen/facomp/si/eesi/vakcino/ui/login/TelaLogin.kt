@@ -15,6 +15,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_tela_login.*
 import ufpa.icen.facomp.si.eesi.vakcino.MainActivity
 import ufpa.icen.facomp.si.eesi.vakcino.R
 import ufpa.icen.facomp.si.eesi.vakcino.TelaCadastro
@@ -49,7 +50,6 @@ class TelaLogin : AppCompatActivity() {
         loginViewModel.loginFormState.observe(this@TelaLogin, Observer {
             val loginState = it ?: return@Observer
 
-            // disable login button unless both username / password is valid
             login.isEnabled = loginState.isDataValid
 
             if (loginState.usernameError != null) {
@@ -74,7 +74,6 @@ class TelaLogin : AppCompatActivity() {
 
             val i = Intent(this, MainActivity::class.java)
             startActivity(i)
-            //Complete and destroy login activity once successful
             finish()
         })
 
@@ -113,8 +112,7 @@ class TelaLogin : AppCompatActivity() {
 
     private fun updateUiWithUser(model: LoggedInUserView) {
         val welcome = getString(R.string.welcome)
-        val displayName = model.displayName
-        // TODO : initiate successful logged in experience
+        val displayName = username.text.toString()
         Toast.makeText(
             applicationContext,
             "$welcome $displayName",
@@ -127,9 +125,7 @@ class TelaLogin : AppCompatActivity() {
     }
 }
 
-/**
- * Extension function to simplify setting an afterTextChanged action to EditText components.
- */
+
 fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {
         override fun afterTextChanged(editable: Editable?) {
