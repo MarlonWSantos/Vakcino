@@ -24,7 +24,7 @@ class TelaLogin : AppCompatActivity() {
 
     private lateinit var loginViewModel: LoginViewModel
     companion object {
-        var primeiroCadastro=false
+        var novoCadastro=false
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,9 +36,9 @@ class TelaLogin : AppCompatActivity() {
         val cadastro = findViewById<Button>(R.id.cadastro)
         val loading = findViewById<ProgressBar>(R.id.loading)
 
-        primeiroCadastro=false
+        novoCadastro=false
         cadastro.setOnClickListener {
-            primeiroCadastro=true
+            novoCadastro=true
                 val i = Intent(this,TelaCadastro::class.java)
                 startActivity(i)
                 finish()

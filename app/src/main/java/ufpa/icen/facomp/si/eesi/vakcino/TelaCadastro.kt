@@ -26,9 +26,9 @@ class TelaCadastro : AppCompatActivity() {
         comboParentesco.setAdapter(adapter)
 
         cancelar.setOnClickListener {
-            var primeiroCadastro = TelaLogin.primeiroCadastro
+            var novoCadastro = TelaLogin.novoCadastro
             var i = Intent()
-            if(primeiroCadastro){
+            if(novoCadastro){
                 i = Intent(this,TelaLogin::class.java)
             }else{
                 i = Intent(this,MainActivity::class.java)
@@ -68,6 +68,7 @@ class TelaCadastro : AppCompatActivity() {
 
         adicionarVacina.setOnClickListener{
             var i = Intent(this,TelaAdicionarVacina::class.java)
+            TelaLogin.novoCadastro=true
             startActivity(i)
             finish()
         }

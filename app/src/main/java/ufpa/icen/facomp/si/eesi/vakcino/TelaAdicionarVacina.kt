@@ -16,9 +16,9 @@ class TelaAdicionarVacina : AppCompatActivity() {
 
         voltar.setOnClickListener{
 
-            var primeiroCadastro = TelaLogin.primeiroCadastro
+            var novoCadastro = TelaLogin.novoCadastro
             var i = Intent()
-            if(primeiroCadastro){
+            if(novoCadastro){
                 i = Intent(this, TelaCadastro::class.java)
             }else{
                 i = Intent(this,TelaInfoUsuario::class.java)

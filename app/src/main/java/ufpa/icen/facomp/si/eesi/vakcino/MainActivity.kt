@@ -4,8 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
-import ufpa.icen.facomp.si.eesi.vakcino.BD
-import ufpa.icen.facomp.si.eesi.vakcino.BD.Companion.dados
 import ufpa.icen.facomp.si.eesi.vakcino.ui.login.TelaLogin
 
 class MainActivity : AppCompatActivity() {
@@ -16,9 +14,9 @@ class MainActivity : AppCompatActivity() {
 
         val adicionarUsuario = findViewById<Button>(R.id.adicionar_usuario)
         val listaUsuarios = findViewById<ListView>(R.id.lista)
-        val voltar = findViewById<Button<>(R.id.voltar)
+        val voltar = findViewById<Button>(R.id.voltar)
 
-        TelaLogin.primeiroCadastro=false
+        TelaLogin.novoCadastro=false
 
         val bd = BD()
         var dados:ArrayList<String> = ArrayList<String>()
