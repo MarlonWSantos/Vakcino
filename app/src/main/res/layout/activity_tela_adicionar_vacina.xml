@@ -8,24 +8,110 @@
         tools:context=".TelaAdicionarVacina">
 
     <TextView
-            android:id="@+id/texto"
-            android:text="Tela Adicionar Vacina"
+            android:text="@string/adicionar_vacina"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/adicionar_vacina"
+            android:textSize="24sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/comboVacinas"
+    />
+
+    <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/comboVacinas"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/inputData"
+            app:layout_constraintTop_toBottomOf="@id/adicionar_vacina"
+    />
+
+    <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/digite_data"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-/>
+            app:layout_constraintTop_toBottomOf="@id/comboVacinas"
+            app:layout_constraintBottom_toTopOf="@id/inputLocal"
+    />
+
+    <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputLocal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/digite_local"
+            app:layout_constraintTop_toBottomOf="@id/inputData"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/imageView"
+    />
+
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@mipmap/add_photo"
+            android:id="@+id/imageView"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:layout_constraintHeight_percent="0.10"
+            app:layout_constraintTop_toBottomOf="@id/inputLocal"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/adicionar_foto"
+            tools:ignore="ContentDescription"/>
+
+    <TextView
+            android:text="@string/adicionar_foto_vacina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/adicionar_foto"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintBottom_toTopOf="@id/criar_lembrete"
+    />
 
     <Button
-            android:id="@+id/voltar"
+            android:text="@string/criar_lembrete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Voltar"
-            app:layout_constraintTop_toBottomOf="@id/texto"
+            android:id="@+id/criar_lembrete"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cancelar"
+            app:layout_constraintTop_toBottomOf="@id/adicionar_foto"
+    />
+
+    <Button
+            android:text="@string/cancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancelar"
+            android:layout_marginRight="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-    />
+            app:layout_constraintRight_toLeftOf="@id/salvar"
+            app:layout_constraintTop_toBottomOf="@id/criar_lembrete"
+            android:layout_marginEnd="20dp"/>
+    <Button
+            android:text="@string/salvar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/salvar"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/cancelar"
+            app:layout_constraintTop_toBottomOf="@id/criar_lembrete"
+            android:layout_marginStart="20dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

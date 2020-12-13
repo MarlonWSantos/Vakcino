@@ -37,18 +37,20 @@ class TelaInfoUsuario : AppCompatActivity() {
             finish()
         }
 
-        var vacinas = arrayOf("Hepatite B","Pneumonia","Febre Amarela","HPV","Herpes-zóster","Gripe",
-            "Tétano","Difteria","Coqueluche","Sarampo","Caxumba","Rubéola","Dengue")
-
         val bd = BD()
         var info:ArrayList<String> = bd.getInfoUsuario(index)
         var dadosUsuario:String = "Nome: "+info.get(0)+"\nIdade: "+info.get(1)+"\nSexo: "+info.get(2)+"\nParentesco: "+info.get(3)
-
-        //val adapterInfoUser = ArrayAdapter(this,android.R.layout.simple_list_item_1,dadosUsuario)
-        val adapterVacinas = ArrayAdapter(this,android.R.layout.simple_list_item_1,vacinas)
         infoUsuario.setText(dadosUsuario)
-        listaVacinas.setAdapter(adapterVacinas)
 
+        var dadosVacina:ArrayList<String> = ArrayList<String>()
+        val tamanhoVacinas:Int = bd.getTamanhoDadosVacina()
 
+        if(tamanhoVacinas>0) {
+            for (i in 0..tamanhoVacinas-1) {
+                dadosVacina.add(bd.getInfoVacina(i).get(0).toString())
+            }
+            val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, dadosVacina)
+            listaVacinas.setAdapter(adapter)
+        }
     }
 }

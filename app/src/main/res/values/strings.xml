@@ -21,5 +21,11 @@
     <string name="digite_nome">Digite seu nome</string>
     <string name="adicionar_usuario">Adicionar usuário</string>
     <string name="voltar">Voltar</string>
+    <string name="criar_lembrete">Criar Lembrete</string>
+    <string name="digite_data">Digite a data da vacina</string>
+    <string name="digite_local">Digite o local da vacina</string>
+    <string name="adicionar_foto_vacina">Adicionar foto do cartão de vacina</string>
+    <string name="adicionar_foto_usuario">Adicionar foto do Usuário</string>
+
 
 </resources>
