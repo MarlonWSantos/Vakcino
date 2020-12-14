@@ -64,11 +64,11 @@
     <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@mipmap/logo_ufpa_menor"
+            android:src="@mipmap/photo_user"
             android:id="@+id/imageView"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            app:layout_constraintHeight_percent="0.20"
+            app:layout_constraintHeight_percent="0.10"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

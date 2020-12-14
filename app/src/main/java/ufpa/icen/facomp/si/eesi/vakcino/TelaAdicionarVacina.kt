@@ -44,7 +44,7 @@ class TelaAdicionarVacina : AppCompatActivity() {
             var local:String = inputLocal.text.toString()
             if(!(data == " " || local == " " || vacina == " ")){
                 val bd = BD()
-                bd.setInfoVacina(vacina, data, local)
+                bd.setInfoVacina(vacina, data, local,TelaInfoUsuario.index)
                 var novoCadastro = TelaLogin.novoCadastro
                 var i = Intent()
                 if(novoCadastro){
