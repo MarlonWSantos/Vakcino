@@ -1,0 +1,418 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".TelaLinhaDoTempoDeVacinas">
+
+    <LinearLayout
+            android:id="@+id/panelGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="5dp"
+            custom:layout_constraintBottom_toTopOf="@id/botaoVoltar"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintLeft_toLeftOf="parent"
+            custom:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.90">
+
+        <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="3"
+                android:id="@+id/grid1">
+
+            <View
+                    android:id="@+id/linhaSuperior1"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <ImageView
+                    android:id="@+id/iconeChecked1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/checked"
+                    android:layout_column="0"
+                    android:layout_row="1"
+            />
+
+
+            <View
+                    android:id="@+id/linhaInferior1"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gripe"
+                    android:textSize="15dp"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="left|center"
+            />
+
+
+        </GridLayout>
+
+        <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="3"
+                android:id="@+id/grid2">
+
+            <View
+                    android:id="@+id/linhaSuperior2"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <ImageView
+                    android:id="@+id/iconeChecked2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/nochecked"
+                    android:layout_column="0"
+                    android:layout_row="1"
+            />
+
+
+            <View
+                    android:id="@+id/linhaInferior2"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Denge"
+                    android:textSize="15dp"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="left|center"
+            />
+
+        </GridLayout>
+        <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="3"
+                android:id="@+id/grid3">
+
+            <View
+                    android:id="@+id/linhaSuperior3"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <ImageView
+                    android:id="@+id/iconeChecked3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/checked"
+                    android:layout_column="0"
+                    android:layout_row="1"
+            />
+
+
+            <View
+                    android:id="@+id/linhaInferior3"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sarampo"
+                    android:textSize="15dp"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="left|center"
+            />
+
+        </GridLayout>
+        <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="3"
+                android:id="@+id/grid4">
+
+            <View
+                    android:id="@+id/linhaSuperior4"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <ImageView
+                    android:id="@+id/iconeChecked4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/checked"
+                    android:layout_column="0"
+                    android:layout_row="1"
+            />
+
+
+            <View
+                    android:id="@+id/linhaInferior4"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rubéola"
+                    android:textSize="15dp"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="left|center"
+            />
+
+        </GridLayout>
+        <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="3"
+                android:id="@+id/grid5">
+
+            <View
+                    android:id="@+id/linhaSuperior5"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <ImageView
+                    android:id="@+id/iconeChecked5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/checked"
+                    android:layout_column="0"
+                    android:layout_row="1"
+            />
+
+
+            <View
+                    android:id="@+id/linhaInferior5"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Caxumba"
+                    android:textSize="15dp"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="left|center"
+            />
+
+        </GridLayout>
+        <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="3"
+                android:id="@+id/grid6">
+
+
+            <View
+                    android:id="@+id/linhaSuperior6"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <ImageView
+                    android:id="@+id/iconeChecked6"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/nochecked"
+                    android:layout_column="0"
+                    android:layout_row="1"
+            />
+
+
+            <View
+                    android:id="@+id/linhaInferior6"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hepatite B"
+                    android:textSize="15dp"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="left|center"
+            />
+
+
+        </GridLayout>
+        <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="3"
+                android:id="@+id/grid7">
+
+            <View
+                    android:id="@+id/linhaSuperior7"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <ImageView
+                    android:id="@+id/iconeChecked7"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/checked"
+                    android:layout_column="0"
+                    android:layout_row="1"
+            />
+
+
+            <View
+                    android:id="@+id/linhaInferior7"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Febre Amarela"
+                    android:textSize="15dp"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="left|center"
+            />
+
+        </GridLayout>
+        <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="3"
+                android:id="@+id/grid8">
+
+            <View
+                    android:id="@+id/linhaSuperior8"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <ImageView
+                    android:id="@+id/iconeChecked8"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/checked"
+                    android:layout_column="0"
+                    android:layout_row="1"
+            />
+
+
+            <View
+                    android:id="@+id/linhaInferior8"
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:background="@android:color/holo_green_dark"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tétano"
+                    android:textSize="15dp"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="left|center"
+            />
+
+        </GridLayout>
+
+
+    </LinearLayout>
+
+    <Button
+            android:id="@+id/botaoVoltar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/voltar"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            custom:layout_constraintTop_toBottomOf="@id/panelGrid"
+            custom:layout_constraintLeft_toLeftOf="parent"
+            custom:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.10"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

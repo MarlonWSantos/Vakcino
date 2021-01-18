@@ -39,6 +39,11 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
+ /*       listaUsuarios.setOnLongClickListener{
+            Toast.makeText(this, "Long click detected", Toast.LENGTH_SHORT).show()
+            true
+        }*/
+
         adicionarUsuario.setOnClickListener {
             val i = Intent(this,TelaCadastro::class.java)
             startActivity(i)

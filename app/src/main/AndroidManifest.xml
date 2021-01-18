@@ -9,11 +9,15 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".TelaEditarUsuario">
+        </activity>
         <activity android:name=".TelaInfoUsuario">
         </activity>
         <activity android:name=".TelaCriarLembrete">
         </activity>
         <activity android:name=".TelaAdicionarVacina">
+        </activity>
+        <activity android:name=".TelaLinhaDoTempoDeVacinas">
         </activity>
         <activity
                 android:name=".TelaInicial"

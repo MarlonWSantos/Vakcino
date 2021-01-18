@@ -8,28 +8,68 @@
         tools:context=".TelaInfoUsuario">
 
     <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editar"
+            android:id="@+id/editar"
+            app:layout_constraintRight_toLeftOf="@id/excluir"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/voltar"
+            app:layout_constraintHeight_percent="0.6"
+
+    >
+
+    </Button>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/excluir"
+            android:id="@+id/excluir"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/editar"
+            app:layout_constraintTop_toBottomOf="@id/voltar"
+            app:layout_constraintHeight_percent="0.6"
+    >
+
+    </Button>
+
+    <Button
             android:text="@string/voltar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/voltar"
-            android:layout_marginBottom="20dp"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/editar"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/adicionar_vacina"
-            app:layout_constraintHeight_percent="0.10"
-
+            app:layout_constraintHeight_percent="0.6"
     />
     <Button
             android:text="@string/adicionar_vacina"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/adicionar_vacina"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/linha_tempo"
             app:layout_constraintBottom_toTopOf="@id/voltar"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/listaVacinas"
-            app:layout_constraintHeight_percent="0.10"
+            app:layout_constraintHeight_percent="0.6"
+
+    />
+
+    <Button
+            android:text="@string/linha_tempo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linha_tempo"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/voltar"
+            app:layout_constraintLeft_toRightOf="@id/adicionar_vacina"
+            app:layout_constraintTop_toBottomOf="@id/listaVacinas"
+            app:layout_constraintHeight_percent="0.6"
 
     />
 
