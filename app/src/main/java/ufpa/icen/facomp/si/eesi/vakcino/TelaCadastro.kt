@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.*
 import com.google.android.material.textfield.TextInputEditText
 import ufpa.icen.facomp.si.eesi.vakcino.ui.login.TelaLogin
-
+//6
 class TelaCadastro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,6 @@ class TelaCadastro : AppCompatActivity() {
         val inputIdade = findViewById<TextInputEditText>(R.id.inputIdade)
         val sexoRadioGroup = findViewById<RadioGroup>(R.id.radioGroup)
 
-
         var lista = arrayOf("Pai","Mãe","Filho(a)","Irmã(o)","Tio(a)","Avô(ó)","Neto(a)","Sobrinho(a)")
         val adapter = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,lista)
         comboParentesco.setAdapter(adapter)
@@ -27,8 +26,10 @@ class TelaCadastro : AppCompatActivity() {
         cancelar.setOnClickListener {
             var novoCadastro = TelaLogin.novoCadastro
             var i = Intent()
+            //1
             if(novoCadastro){
                 i = Intent(this,TelaLogin::class.java)
+            //1
             }else{
                 i = Intent(this,MainActivity::class.java)
             }
@@ -41,17 +42,15 @@ class TelaCadastro : AppCompatActivity() {
             var nome:String = inputNome.text.toString()
             var idade:String = inputIdade.text.toString()
             var id: Int = sexoRadioGroup.checkedRadioButtonId
-            var sexo:String
-
+            var sexo:String =""
+            //1
             if(id != -1) {
                 val radio:RadioButton = findViewById(id)
                 sexo=radio.text.toString()
-            }else{
-                sexo=""
             }
 
             var parentesco:String = comboParentesco.getSelectedItem().toString()
-
+            //1
             if(!(nome == " " || idade == " " || sexo == " " || parentesco == " ")){
                 val bd = BD()
                 bd.setInfoUsuario(nome, idade, sexo, parentesco)
@@ -59,8 +58,7 @@ class TelaCadastro : AppCompatActivity() {
                 val i = Intent(this, MainActivity::class.java)
                 startActivity(i)
                 finish()
-            }else{
-                Toast.makeText(this, "Digite em todos os campos", Toast.LENGTH_SHORT).show()
+
             }
         }
     }

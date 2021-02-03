@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.*
 import com.google.android.material.textfield.TextInputEditText
 import ufpa.icen.facomp.si.eesi.vakcino.ui.login.TelaLogin
-
+//6
 class TelaAdicionarVacina : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,41 +25,23 @@ class TelaAdicionarVacina : AppCompatActivity() {
         comboVacinas.setAdapter(adapter)
 
         cancelar.setOnClickListener{
-
-            var novoCadastro = TelaLogin.novoCadastro
-            var i = Intent()
-            if(novoCadastro){
-                i = Intent(this, TelaCadastro::class.java)
-            }else{
-                i = Intent(this,TelaInfoUsuario::class.java)
-                i.putExtra("Posicao do item da lista",TelaInfoUsuario.index)
-            }
-            startActivity(i)
-            finish()
+            mudarParaOutraTela()
         }
 
         salvar.setOnClickListener{
             var vacina:String = comboVacinas.getSelectedItem().toString()
             var data:String = inputData.text.toString()
             var local:String = inputLocal.text.toString()
+
             if(!(data == " " || local == " " || vacina == " ")){
                 val bd = BD()
                 bd.setInfoVacina(vacina, data, local,TelaInfoUsuario.index)
-                var novoCadastro = TelaLogin.novoCadastro
-                var i = Intent()
-                if(novoCadastro){
-                    i = Intent(this, TelaCadastro::class.java)
-                }else{
-                    i = Intent(this,TelaInfoUsuario::class.java)
-                    i.putExtra("Posicao do item da lista",TelaInfoUsuario.index)
-                }
-                startActivity(i)
-                finish()
-            }else{
-                Toast.makeText(this, "Digite em todos os campos", Toast.LENGTH_SHORT).show()
-            }
 
+                mudarParaOutraTela()
+            }
         }
+
+
 
         criarLembrete.setOnClickListener{
             var i = Intent(this,TelaCriarLembrete::class.java)
@@ -67,4 +49,17 @@ class TelaAdicionarVacina : AppCompatActivity() {
             finish()
         }
     }
+    fun mudarParaOutraTela(){
+        var novoCadastro = TelaLogin.novoCadastro
+        var i = Intent()
+        if(novoCadastro){
+            i = Intent(this, TelaCadastro::class.java)
+        }else{
+            i = Intent(this,TelaInfoUsuario::class.java)
+            i.putExtra("Posicao do item da lista",TelaInfoUsuario.index)
+        }
+        startActivity(i)
+        finish()
+    }
+
 }
