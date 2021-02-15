@@ -9,7 +9,8 @@ class BD {
     companion object{
        var dados: ArrayList<ArrayList<String>> = ArrayList<ArrayList<String>>()
        var dadosVacina: ArrayList<ArrayList<String>> = ArrayList<ArrayList<String>>()
-
+       var vacinasCriancas: ArrayList<String> = ArrayList<String>()
+       var vacinasAdultos: ArrayList<String> = ArrayList<String>()
     }
 
     fun getInfoUsuario(index:Int):ArrayList<String>{
@@ -33,12 +34,11 @@ class BD {
         return dados.size
     }
 
-    fun getTamanhoDadosVacina(): Boolean {
-        return dadosVacina.isNullOrEmpty()
+    fun isDadosVacinaNaoVazio(): Boolean {
+        return !dadosVacina.isNullOrEmpty()
     }
 
     fun editarUsuario(index:Int,nome:String,idade:String,sexo:String,parentesco:String){
-        //var lista:ArrayList<String> = ArrayList<String>()
         dados.get(index).set(0,nome)
         dados.get(index).set(1,idade)
         dados.get(index).set(2,sexo)
@@ -59,8 +59,6 @@ class BD {
         dadosVacina.clear()
         dadosVacina = ArrayList(temp)
 
-
-
         dados.removeAt(index)
 
         var number=0
@@ -74,6 +72,36 @@ class BD {
                 lista.set(0,number.toString())
             }
         }
+    }
+
+    fun carregaListaVacinas(tipoPessoa:String):ArrayList<String>{
+
+        if(tipoPessoa.equals("crianca")) {
+            vacinasCriancas = arrayListOf(
+                "BCG",
+                "Hepatite B",
+                "Difteria",
+                "Tétato",
+                "Coqueluche",
+                "Meningite",
+                "Poliomielite",
+                "Febre amarela",
+                "Sarampo",
+                "Rubéola",
+                "Caxumba"
+            )
+            return vacinasCriancas
+        }
+        vacinasAdultos = arrayListOf(
+            "Difteria",
+            "Tétano",
+            "Febre Amarela",
+            "Sarampo",
+            "Caxumba",
+            "Rubéola",
+            "Dengue",
+            "Pneumonia")
+        return vacinasAdultos
     }
 }
 

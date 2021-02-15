@@ -9,6 +9,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".TimeLineView">
+        </activity>
         <activity android:name=".TelaEditarUsuario">
         </activity>
         <activity android:name=".TelaInfoUsuario">

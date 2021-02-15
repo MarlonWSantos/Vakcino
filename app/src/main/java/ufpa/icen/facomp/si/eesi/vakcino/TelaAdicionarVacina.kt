@@ -19,8 +19,18 @@ class TelaAdicionarVacina : AppCompatActivity() {
         val inputData = findViewById<TextInputEditText>(R.id.inputData)
         val inputLocal = findViewById<TextInputEditText>(R.id.inputLocal)
 
-        var lista = arrayOf("Hepatite B","Pneumonia","Febre Amarela","HPV","Herpes-zóster","Gripe",
-            "Tétano","Difteria","Coqueluche","Sarampo","Caxumba","Rubéola","Dengue")
+/*        var lista = arrayOf("Hepatite B","Pneumonia","Febre Amarela","HPV","Herpes-zóster","Gripe",
+            "Tétano","Difteria","Coqueluche","Sarampo","Caxumba","Rubéola","Dengue")*/
+        var lista = arrayListOf(
+            "Difteria",
+            "Tétano",
+            "Febre Amarela",
+            "Sarampo",
+            "Caxumba",
+            "Rubéola",
+            "Dengue",
+            "Pneumonia")
+
         val adapter = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,lista)
         comboVacinas.setAdapter(adapter)
 

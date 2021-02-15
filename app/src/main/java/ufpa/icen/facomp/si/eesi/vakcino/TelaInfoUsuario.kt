@@ -32,9 +32,9 @@ class TelaInfoUsuario : AppCompatActivity() {
         var dadosUsuario:String = "Nome: "+info.get(0)+"\nIdade: "+info.get(1)+"\nSexo: "+info.get(2)+"\nParentesco: "+info.get(3)
         infoUsuario.setText(dadosUsuario)
 
-        val tamanhoVacinas: Boolean = bd.getTamanhoDadosVacina()
+        val dadosVacinasNaoVazio: Boolean = bd.isDadosVacinaNaoVazio()
 
-        if(!tamanhoVacinas) {
+        if(dadosVacinasNaoVazio) {
             var dadosVacina:ArrayList<ArrayList<String>> = ArrayList<ArrayList<String>>()
             dadosVacina=bd.getInfoVacina()
 
@@ -71,8 +71,8 @@ class TelaInfoUsuario : AppCompatActivity() {
         }
 
         linhaTempo.setOnClickListener{
-            val i = Intent(this,TelaLinhaDoTempoDeVacinas::class.java)
-            i.putExtra("Posicao do item da lista",index)
+            val i = Intent(this,TimeLineView::class.java)
+            //i.putExtra("Posicao do item da lista",index)
             startActivity(i)
             finish()
         }
